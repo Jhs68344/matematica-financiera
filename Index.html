@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Matemática Financiera Paso a Paso – Asesoría y Ejercicios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asesoría personalizada en matemática financiera: interés simple, compuesto, tasas, gradientes, amortización, VPN, TIR, análisis financiero y más. Atención por WhatsApp.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+      background: #F3F6FB;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #002B5B;
+      margin-top: 0;
+    }
+
+    /* HEADER */
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E0E4EC;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-title {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .header-contact {
+      text-align: right;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #002B5B;
+      line-height: 1.3;
+    }
+
+    /* HERO */
+    #hero-wrapper {
+      padding: 30px 0 10px 0;
+    }
+
+    #hero {
+      background: #E8F1FF;
+      padding: 35px 25px 45px 25px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    #hero h2 {
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+
+    #hero p {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .hero-phone {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .hero-image {
+      margin: 18px auto 10px auto;
+      max-width: 180px;
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px 8px 0 8px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .primary {
+      background: #005BBB;
+      color: white;
+      border: none;
+    }
+
+    .primary:hover {
+      background: #004799;
+    }
+
+    .secondary {
+      background: #FFFFFF;
+      color: #005BBB;
+      border: 2px solid #005BBB;
+    }
+
+    .secondary:hover {
+      background: #F0F5FF;
+    }
+
+    /* SECCIONES GENERALES */
+    section.section {
+      padding: 35px 0;
+    }
+
+    .section h2 {
+      margin-bottom: 18px;
+    }
+
+    /* CUADROS SERVICIOS */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .col {
+      flex: 1 1 280px;
+    }
+
+    .box {
+      border: 1px solid #DDD;
+      border-radius: 10px;
+      padding: 20px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      height: 100%;
+    }
+
+    .box h3 {
+      margin-bottom: 10px;
+    }
+
+    /* LISTAS TEMAS */
+    .topics-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .topics-col {
+      flex: 1 1 300px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    /* CONTACTO */
+    #contacto {
+      text-align: center;
+      background: #FFFFFF;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      padding: 35px 20px;
+    }
+
+    #contacto p {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+
+    .contact-phone {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 10px 0 15px 0;
+    }
+
+    /* BOTÓN FLOTANTE */
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 999;
+      font-size: 15px;
+    }
+
+    .floating-whatsapp:hover {
+      background: #1fb557;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #002B5B;
+      padding: 22px 10px;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 780px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-contact {
+        text-align: left;
+      }
+      #hero {
+        padding: 28px 18px 38px 18px;
+      }
+      .floating-whatsapp {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-title {
+        font-size: 1.1rem;
+      }
+      #hero h2 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="header-left">
+      <img src="logo-matematica-financiera.png" alt="Logo Matemática Financiera" style="height:60px;">
+      <h1 class="header-title">Matemática Financiera Paso a Paso</h1>
+    </div>
+    <div class="header-contact">
+      WhatsApp / Celular<br>
+      +57 316 872 6521
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div id="hero-wrapper">
+  <div class="container">
+    <section id="hero">
+      <h2>Se explican los temas, se resuelven dudas y se realizan ejercicios paso a paso.</h2>
+
+      <p>
+        Apoyo personalizado para estudiantes, profesionales y emprendedores que necesitan entender y aplicar la matemática financiera
+        y el análisis financiero de forma clara y práctica.
+      </p>
+
+      <p class="hero-phone">
+        WhatsApp / Celular: +57 316 872 6521
+      </p>
+
+      <img src="logo-matematica-financiera.png" class="hero-image" alt="Matemática Financiera Paso a Paso">
+
+      <div>
+        <a href="https://wa.me/573168726521?text=Hola,%20necesito%20asesor%C3%ADa%20de%20Matem%C3%A1tica%20Financiera%20Paso%20a%20Paso."
+           class="btn primary">Solicitar ayuda por WhatsApp</a>
+        <a href="#servicios" class="btn secondary">Ver temas y servicios</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ¿QUÉ SE OFRECE? -->
+<section class="section">
+  <div class="container">
+    <h2>¿Qué se ofrece?</h2>
+    <div class="columns">
+      <div class="col">
+        <div class="box">
+          <h3>1. Explicación de temas</h3>
+          <p>Explicaciones claras con ejemplos para dominar cada concepto.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="box">
+          <h3>2. Resolución de ejercicios</h3>
+          <p>Ejercicios desarrollados paso a paso, con fórmulas y resultados.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="box">
+          <h3>3. Resolución de dudas</h3>
+          <p>Envía tu duda y recibe una explicación clara y directa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMAS MATEMÁTICA FINANCIERA -->
+<section class="section">
+  <div class="container">
+    <h2>Temas de Matemática Financiera</h2>
+
+    <div class="topics-columns">
+      <div class="topics-col">
+        <ul>
+          <li>Interés simple</li>
+          <li>Interés compuesto</li>
+          <li>Conversión de tasas de interés</li>
+          <li>Valor presente y valor futuro</li>
+          <li>Ecuaciones de valor</li>
+          <li>Fecha focal</li>
+          <li>Anualidades ordinarias y anticipadas</li>
+          <li>Gradientes aritméticos</li>
+          <li>Gradientes geométricos</li>
+        </ul>
+      </div>
+      <div class="topics-col">
+        <ul>
+          <li>Tablas de amortización</li>
+          <li>Cuotas y créditos</li>
+          <li>Costo efectivo del crédito</li>
+          <li>Evaluación de proyectos</li>
+          <li>VPN</li>
+          <li>TIR</li>
+          <li>Flujos de caja</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMAS ANÁLISIS FINANCIERO -->
+<section class="section">
+  <div class="container">
+    <h2>Temas de Análisis Financiero</h2>
+
+    <div class="topics-columns">
+      <div class="topics-col">
+        <ul>
+          <li>Análisis horizontal</li>
+          <li>Análisis vertical</li>
+          <li>Razones de liquidez</li>
+          <li>Razones de rentabilidad</li>
+        </ul>
+      </div>
+      <div class="topics-col">
+        <ul>
+          <li>Razones de rotación</li>
+          <li>Análisis de endeudamiento</li>
+          <li>Presupuestos</li>
+          <li>Interpretación de estados financieros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section">
+  <div class="container">
+    <section id="contacto">
+      <h2>Solicitar ayuda en Matemática Financiera</h2>
+      <p>Indica tu tema, ejercicio o duda y recibirás atención personalizada.</p>
+
+      <p class="contact-phone">
+        WhatsApp / Celular: +57 316 872 6521
+      </p>
+
+      <a href="https://wa.me/573168726521?text=Hola,%20necesito%20asesor%C3%ADa%20de%20Matem%C3%A1tica%20Financiera%20Paso%20a%20Paso."
+         class="btn primary">Contactar por WhatsApp</a>
+    </section>
+  </div>
+</section>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="https://wa.me/573168726521?text=Hola,%20necesito%20asesor%C3%ADa%20de%20Matem%C3%A1tica%20Financiera%20Paso%20a%20Paso."
+   class="floating-whatsapp">💬 WhatsApp</a>
+
+<footer>
+  Matemática Financiera Paso a Paso – Asesoría y Ejercicios · WhatsApp / Celular: +57 316 872 6521
+</footer>
+
+</body>
+</html>
