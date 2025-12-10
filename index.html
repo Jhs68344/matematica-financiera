@@ -1,73 +1,767 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matemática Financiera Paso a Paso – Ejercicios y Explicaciones</title>
+    <!-- =================== META BÁSICA =================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Asesoría, ejercicios resueltos y explicaciones paso a paso de matemática financiera: interés simple, compuesto, anualidades, tasas equivalentes y más.">
-    <meta name="author" content="Jhs68344">
+    <title>Matemática Financiera Paso a Paso | Ejercicios y Explicaciones</title>
 
+    <meta name="description" content="Aprende matemática financiera paso a paso con ejercicios resueltos, teoría clara y ejemplos prácticos: interés simple, compuesto, anualidades, tasas equivalentes y más." />
+    <meta name="keywords" content="matemática financiera, interes simple, interes compuesto, anualidades, tasas equivalentes, valor presente, valor futuro, ejercicios resueltos" />
+    <meta name="author" content="Matemática Financiera - Jhs68344" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- URL CANÓNICA (muy importante para SEO en GitHub Pages) -->
+    <link rel="canonical" href="https://jhs68344.github.io/matematica-financiera/" />
+
+    <!-- =================== OPEN GRAPH (REDES SOCIALES) =================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Matemática Financiera Paso a Paso" />
+    <meta property="og:description" content="Asesoría, ejercicios resueltos y explicaciones claras de matemática financiera para estudiantes y profesionales." />
+    <meta property="og:url" content="https://jhs68344.github.io/matematica-financiera/" />
+    <!-- Si tu logo es accesible públicamente, úsalo como imagen -->
+    <meta property="og:image" content="https://jhs68344.github.io/matematica-financiera/logo-matematica-financiera.png" />
+
+    <!-- =================== TWITTER CARD =================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Matemática Financiera Paso a Paso" />
+    <meta name="twitter:description" content="Aprende matemática financiera con ejercicios resueltos y explicaciones paso a paso." />
+    <meta name="twitter:image" content="https://jhs68344.github.io/matematica-financiera/logo-matematica-financiera.png" />
+
+    <!-- =================== FAVICON (OPCIONAL) =================== -->
+    <!-- Si quieres, puedes crear un favicon y subirlo como favicon.ico -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+
+    <!-- =================== ESTILOS =================== -->
     <style>
+        :root {
+            --color-principal: #0056d6;
+            --color-secundario: #002b5c;
+            --color-fondo: #f3f4f6;
+            --color-texto: #333333;
+            --radius-base: 12px;
+            --shadow-suave: 0 4px 14px rgba(0,0,0,0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #f4f4f4;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--color-principal);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== HEADER / NAV ====== */
         header {
-            background: #002b5c;
+            background: linear-gradient(135deg, var(--color-secundario), var(--color-principal));
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 18px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
+
+        .contenedor {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo img {
+            width: 44px;
+            height: 44px;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
         }
-        h1, h2 {
-            color: #002b5c;
+
+        .nav-logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
         }
-        footer {
+
+        .nav-menu {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-menu a {
+            color: #e5ecff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 999px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.15);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* ====== HERO ====== */
+        .hero {
+            padding: 40px 0 30px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+            margin-bottom: 12px;
+            color: var(--color-secundario);
+        }
+
+        .hero-resaltado {
+            color: var(--color-principal);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 12px 0 18px;
+        }
+
+        .badge {
+            background: white;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-suave);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-primario {
+            background: var(--color-principal);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 0.98rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-suave);
+        }
+
+        .btn-primario span {
+            font-size: 1.2rem;
+        }
+
+        .btn-secundario {
+            background: transparent;
+            border-radius: 999px;
+            padding: 10px 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.92rem;
+            cursor: pointer;
+        }
+
+        .hero-nota {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .hero-tarjeta {
+            background: white;
+            border-radius: var(--radius-base);
+            padding: 18px;
+            box-shadow: var(--shadow-suave);
+        }
+
+        .hero-tarjeta h2 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--color-secundario);
+        }
+
+        .hero-lista {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 0;
+        }
+
+        .hero-lista li::before {
+            content: "✔";
+            margin-right: 8px;
+            color: var(--color-principal);
+        }
+
+        .hero-lista li {
+            margin-bottom: 6px;
+            font-size: 0.93rem;
+        }
+
+        /* ====== SECCIONES PRINCIPALES ====== */
+        section {
+            padding: 26px 0;
+        }
+
+        section:nth-of-type(even) {
+            background: #ffffff;
+        }
+
+        section:nth-of-type(odd) {
+            background: var(--color-fondo);
+        }
+
+        .seccion-titulo {
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        .seccion-titulo h2 {
+            margin: 0 0 6px;
+            color: var(--color-secundario);
+        }
+
+        .seccion-titulo p {
+            margin: 0;
+            font-size: 0.95rem;
             color: #555;
         }
+
+        /* ====== TARJETAS DE TEMAS ====== */
+        .grid-temas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: var(--radius-base);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-suave);
+        }
+
+        .tarjeta h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--color-secundario);
+        }
+
+        .tarjeta p {
+            margin: 0 0 8px;
+            font-size: 0.93rem;
+        }
+
+        .tarjeta ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 0.9rem;
+        }
+
+        /* ====== EJEMPLOS / EJERCICIOS ====== */
+        .grid-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .resaltado {
+            background: #e6f0ff;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        code {
+            font-family: "Fira Code", Consolas, monospace;
+            font-size: 0.88rem;
+            background: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        /* ====== RECURSOS / SOBRE MÍ ====== */
+        .lista-simple {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-simple li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .sobre-mi {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .sobre-mi-destacado {
+            background: white;
+            border-radius: var(--radius-base);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-suave);
+            font-size: 0.93rem;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 16px 0;
+            font-size: 0.85rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .footer-inner a {
+            color: #c7d2fe;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .hero-grid,
+            .sobre-mi {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                justify-content: flex-start;
+            }
+        }
     </style>
+
+    <!-- =================== DATOS ESTRUCTURADOS (SCHEMA.ORG) =================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Matemática Financiera Paso a Paso",
+      "url": "https://jhs68344.github.io/matematica-financiera/",
+      "description": "Sitio de apoyo para aprender matemática financiera con ejercicios resueltos y explicaciones paso a paso.",
+      "inLanguage": "es",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Matemática Financiera",
+        "url": "https://jhs68344.github.io/matematica-financiera/"
+      }
+    }
+    </script>
 </head>
+
 <body>
+    <!-- =================== HEADER / NAV =================== -->
+    <header>
+        <div class="contenedor nav" aria-label="Barra de navegación principal">
+            <div class="nav-logo">
+                <!-- Usa tu logo si está subido en el repositorio -->
+                <img src="logo-matematica-financiera.png" alt="Logo de Matemática Financiera" />
+                <div class="nav-logo-text">Matemática Financiera</div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#temas">Temas</a>
+                <a href="#ejercicios">Ejercicios</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <h1>Matemática Financiera Paso a Paso</h1>
-    <p>Asesoría, ejercicios y explicación clara para aprender finanzas desde cero.</p>
-</header>
+    <!-- =================== HERO =================== -->
+    <main id="inicio" class="hero">
+        <div class="contenedor hero-grid">
+            <section aria-labelledby="titulo-hero">
+                <h1 id="titulo-hero">
+                    Aprende <span class="hero-resaltado">Matemática Financiera</span> paso a paso 📘
+                </h1>
+                <p>
+                    Explicaciones claras, ejemplos prácticos y ejercicios resueltos para que entiendas
+                    conceptos como <strong>interés simple</strong>, <strong>interés compuesto</strong>,
+                    <strong>anualidades</strong> y <strong>tasas equivalentes</strong> sin complicarte.
+                </p>
 
-<main>
-    <h2>Bienvenido 👋</h2>
-    <p>
-        Aquí encontrarás material de apoyo, ejercicios resueltos y explicaciones 
-        detalladas de temas como:
-    </p>
-    <ul>
-        <li>Interés simple y compuesto</li>
-        <li>Descuento simple y compuesto</li>
-        <li>Anualidades y rentas</li>
-        <li>Tasas nominales, efectivas y equivalentes</li>
-        <li>Y mucho más…</li>
-    </ul>
+                <div class="hero-badges">
+                    <span class="badge">Pensado para estudiantes y autodidactas</span>
+                    <span class="badge">Ejercicios resueltos paso a paso</span>
+                    <span class="badge">Orientado a exámenes y trabajos</span>
+                </div>
 
-    <p>Pronto iré agregando más contenido y secciones a esta página.</p>
-</main>
+                <div class="hero-cta">
+                    <a href="#temas">
+                        <button class="btn-primario">
+                            Ver temario principal <span>↓</span>
+                        </button>
+                    </a>
+                    <a href="#ejercicios">
+                        <button class="btn-secundario">
+                            Ir directo a ejercicios resueltos
+                        </button>
+                    </a>
+                </div>
 
-<footer>
-    &copy; 2025 Matemática Financiera – jhs68344.github.io
-</footer>
+                <p class="hero-nota">
+                    Actualizaré el contenido de forma periódica con nuevos temas, ejemplos y
+                    material descargable.
+                </p>
+            </section>
 
+            <aside class="hero-tarjeta" aria-label="Resumen de lo que aprenderás">
+                <h2>¿Qué aprenderás aquí?</h2>
+                <ul class="hero-lista">
+                    <li>Interpretar y aplicar correctamente tasas de interés.</li>
+                    <li>Calcular valor presente y valor futuro de operaciones financieras.</li>
+                    <li>Resolver anualidades, rentas y préstamos amortizables.</li>
+                    <li>Usar las fórmulas financieras clásicas con sentido y criterio.</li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- =================== TEMAS PRINCIPALES =================== -->
+    <section id="temas">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Temas principales de Matemática Financiera</h2>
+                <p>Una base sólida para cursos universitarios, técnicos y autoestudio.</p>
+            </div>
+
+            <div class="grid-temas">
+                <article class="tarjeta">
+                    <h3>1. Interés simple</h3>
+                    <p>
+                        Introducción al <strong>interés simple</strong>, sus fórmulas y aplicaciones
+                        en operaciones de corto plazo.
+                    </p>
+                    <ul>
+                        <li>Conceptos básicos y elementos de la operación.</li>
+                        <li>Cálculo de monto, capital, tasa y tiempo.</li>
+                        <li>Ejemplos típicos de exámenes.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>2. Interés compuesto</h3>
+                    <p>
+                        Clave en la matemática financiera moderna: crecimiento exponencial del capital,
+                        reinversión de intereses y tasas efectivas.
+                    </p>
+                    <ul>
+                        <li>Fórmula general del monto compuesto.</li>
+                        <li>Capitalización anual, semestral, mensual, diaria.</li>
+                        <li>Comparación entre interés simple y compuesto.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>3. Tasas nominales, efectivas y equivalentes</h3>
+                    <p>
+                        Aprende a convertir y comparar <strong>tasas de interés</strong> en diferentes
+                        periodos de capitalización.
+                    </p>
+                    <ul>
+                        <li>Tasas nominales vs tasas efectivas.</li>
+                        <li>Tasas vencidas y anticipadas.</li>
+                        <li>Tasas equivalentes en distintos plazos.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>4. Anualidades y rentas</h3>
+                    <p>
+                        Tratamiento de pagos periódicos: préstamos, ahorros programados, pensiones
+                        y otros casos habituales.
+                    </p>
+                    <ul>
+                        <li>Anualidades ordinarias (vencidas).</li>
+                        <li>Anualidades anticipadas.</li>
+                        <li>Cálculo de cuotas, montos y saldos.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>5. Descuento simple y compuesto</h3>
+                    <p>
+                        Operaciones de descuento aplicadas a letras, pagarés y documentos
+                        financieros.
+                    </p>
+                    <ul>
+                        <li>Descuento simple comercial y racional.</li>
+                        <li>Descuento compuesto.</li>
+                        <li>Relación con valor nominal y valor actual.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>6. Valor presente y valor futuro</h3>
+                    <p>
+                        Uso del <strong>valor presente</strong> y <strong>valor futuro</strong> para
+                        comparar alternativas de inversión y financiamiento.
+                    </p>
+                    <ul>
+                        <li>Diagramas de flujo de caja.</li>
+                        <li>Descuento a distintas tasas y plazos.</li>
+                        <li>Aplicación en proyectos y préstamos.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== EJERCICIOS RESUELTOS =================== -->
+    <section id="ejercicios">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Ejercicios resueltos paso a paso</h2>
+                <p>Algunos ejemplos típicos que encontrarás en cursos y evaluaciones.</p>
+            </div>
+
+            <div class="grid-ejercicios">
+                <article class="tarjeta">
+                    <div class="etiqueta">Interés simple</div>
+                    <h3>Ejemplo 1: Cálculo del monto</h3>
+                    <p>
+                        Un capital de <span class="resaltado">$5.000</span> se invierte al
+                        <span class="resaltado">12% anual</span> bajo interés simple durante
+                        <span class="resaltado">8 meses</span>. ¿Cuál es el monto al final del
+                        periodo?
+                    </p>
+                    <p>
+                        Fórmula general:
+                        <code>M = C (1 + i \u00b7 n)</code>
+                    </p>
+                    <p>
+                        En la sección detallada verás cada paso: sustitución de datos, conversión
+                        de tiempo y verificación del resultado.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="etiqueta">Interés compuesto</div>
+                    <h3>Ejemplo 2: Capitalización mensual</h3>
+                    <p>
+                        ¿Qué monto obtendrás si depositas
+                        <span class="resaltado">$10.000</span> a una tasa nominal anual del
+                        <span class="resaltado">18%</span> con capitalización mensual durante
+                        <span class="resaltado">3 años</span>?
+                    </p>
+                    <p>
+                        Fórmula:
+                        <code>M = C (1 + i/m)^{m \u00b7 n}</code>
+                    </p>
+                    <p>
+                        Aprenderás a identificar la tasa por periodo y el número total de periodos
+                        de capitalización.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="etiqueta">Anualidades</div>
+                    <h3>Ejemplo 3: Cálculo de la cuota de un préstamo</h3>
+                    <p>
+                        Un préstamo de <span class="resaltado">$50.000</span> se amortiza en
+                        <span class="resaltado">24 meses</span> con pagos mensuales iguales a una
+                        tasa de interés del <span class="resaltado">2% mensual</span>.
+                    </p>
+                    <p>
+                        Fórmula de anualidad vencida:
+                        <code>R = \dfrac{P \u00b7 i}{1 - (1 + i)^{-n}}</code>
+                    </p>
+                    <p>
+                        Se mostrará cómo obtener la cuota, y cómo interpretar cada elemento de la
+                        fórmula.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== RECURSOS =================== -->
+    <section id="recursos">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Recursos y materiales de apoyo</h2>
+                <p>
+                    Próximamente iré añadiendo más contenido para complementar la parte teórica y práctica.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>¿Qué encontrarás aquí?</h3>
+                <ul class="lista-simple">
+                    <li>Resúmenes teóricos en lenguaje sencillo.</li>
+                    <li>Listas de fórmulas financieras comentadas.</li>
+                    <li>Ejercicios propuestos con sus soluciones.</li>
+                    <li>Plantillas en PDF y hojas de cálculo (a futuro).</li>
+                </ul>
+                <p>
+                    La idea es que este sitio sea tu referencia rápida cuando estés preparando
+                    <strong>exámenes, trabajos o proyectos</strong> relacionados con matemática financiera.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SOBRE MÍ =================== -->
+    <section id="sobre-mi">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Sobre el proyecto</h2>
+                <p>
+                    Un espacio pensado para acompañarte en el aprendizaje de la matemática financiera.
+                </p>
+            </div>
+
+            <div class="sobre-mi">
+                <div>
+                    <p>
+                        Este sitio surge con el objetivo de ofrecer una
+                        <strong>explicación clara y ordenada</strong> de los temas más importantes
+                        de la matemática financiera: desde los conceptos básicos hasta ejercicios
+                        con un nivel similar al de exámenes universitarios.
+                    </p>
+                    <p>
+                        El enfoque es práctico: no solo verás fórmulas, sino también
+                        <strong>interpretación</strong> de resultados, diagramas de flujo de caja
+                        y recomendaciones para evitar errores frecuentes.
+                    </p>
+                </div>
+
+                <aside class="sobre-mi-destacado">
+                    <h3>¿Cómo usar mejor este sitio?</h3>
+                    <ul class="lista-simple">
+                        <li>Empieza por los temas que ya conoces para reforzar la base.</li>
+                        <li>Luego avanza a los ejercicios resueltos y repítelos por tu cuenta.</li>
+                        <li>Utiliza las fórmulas como guía, no como memorización mecánica.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== CONTACTO =================== -->
+    <section id="contacto">
+        <div class="contenedor">
+            <div class="seccion-titulo">
+                <h2>Contacto y sugerencias</h2>
+                <p>
+                    ¿Te gustaría que agregue un tema o tipo de ejercicio en particular?
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <p>
+                    Puedes sugerir temas, corregir errores o proponer nuevos ejercicios a través de
+                    los canales que tengas disponibles (por ejemplo correo, redes o la sección de
+                    issues en GitHub).
+                </p>
+                <p>
+                    Si usas GitHub, también puedes abrir un
+                    <strong>issue</strong> directamente en el repositorio para dejar tu comentario.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer>
+        <div class="contenedor footer-inner">
+            <div>
+                &copy; <span id="anio-actual"></span> Matemática Financiera – Todos los derechos reservados.
+            </div>
+            <div>
+                Sitio alojado en <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a>.
+            </div>
+        </div>
+    </footer>
+
+    <!-- =================== JS SUAVE Y SIMPLE =================== -->
+    <script>
+        // Insertar automáticamente el año actual en el footer
+        document.getElementById("anio-actual").textContent = new Date().getFullYear();
+
+        // Desplazamiento suave para los links del menú
+        document.querySelectorAll('a[href^="#"]').forEach(function (enlace) {
+            enlace.addEventListener("click", function (e) {
+                const destino = document.querySelector(this.getAttribute("href"));
+                if (destino) {
+                    e.preventDefault();
+                    destino.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
