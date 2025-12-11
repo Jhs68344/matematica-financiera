@@ -7,11 +7,8 @@
 
     <title>Matemática Financiera Paso a Paso | Ejercicios y Explicaciones</title>
 
-    <meta name="description" content="Aprende matemática financiera paso a paso interes simple, interes compuesto, equivalencia de tasas, tasas de interes, tasas efectivas, tasas nomminales." />
-    <meta name="description" content="anualidades, gradiente aritmetico, gradiente geometrico, ecuaciones de valor, anualidades, TIR, VPN, WACCC, razones de líquidez, reazones rentabilidad." />
-    <meta name="description" content="razones de rotación, presupuestos, análisis horizontal, análisis vertical, inversiones con retorno fijo, inversiones con retorno, variable, etc" />
-    <meta name="keywords" content="anualidades, gradiente aritmetico, gradiente geometrico, ecuaciones de valor, anualidades, TIR, VPN, WACCC, razones de líquidez, reazones rentabilidad" />
-    <meta name="keywords" content="razones de rotación, presupuestos, análisis horizontal, análisis vertical, inversiones con retorno fijo, inversiones con retorno, variable, etc." />
+    <meta name="description" content="Aprende matemática financiera paso a paso con ejercicios resueltos, teoría clara y ejemplos prácticos: interés simple, interés compuesto, anualidades, tasas equivalentes, valor presente, valor futuro, indicadores financieros y más." />
+    <meta name="keywords" content="matemática financiera, interes simple, interes compuesto, anualidades, tasas equivalentes, valor presente, valor futuro, ecuaciones de valor, fecha focal, indicadores financieros, liquidez, rotación, ROE, ROA" />
     <meta name="author" content="Matemática Financiera - Jhs68344" />
     <meta name="robots" content="index,follow" />
 
@@ -368,6 +365,17 @@
             filter: brightness(1.03);
         }
 
+        /* ====== SECTION DASHBOARD ====== */
+        .dashboard-imagen {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .dashboard-imagen img {
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
         /* ====== FOOTER ====== */
         footer {
             background: #0f172a;
@@ -422,6 +430,10 @@
             .nav-menu {
                 justify-content: flex-start;
             }
+
+            .dashboard-imagen {
+                margin: 0;
+            }
         }
     </style>
 
@@ -438,7 +450,7 @@
     </script>
 
     <!-- =================== GOOGLE ANALYTICS 4 (REEMPLAZA G-XXXXXXXXXX) =================== -->
-    <!-- Sustituye G-XXXXXXXXXX por tu ID real de GA4 -->
+    <!-- Sustituye G-XXXXXXXXXX por tu ID real de GA4 cuando lo tengas -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -461,7 +473,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#temas">Temas</a>
                 <a href="#ejercicios">Ejercicios</a>
-                <a href="#recursos">Recursos</a>
+                <a href="#dashboard">Dashboard</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
@@ -476,7 +488,8 @@
                 </h1>
                 <p>
                     Explicaciones claras, ejemplos prácticos y ejercicios resueltos para dominar
-                    interés simple, compuesto, anualidades, tasas equivalentes y más.
+                    interés simple, compuesto, anualidades, tasas equivalentes, ecuaciones de valor
+                    e indicadores financieros.
                 </p>
 
                 <div class="hero-badges">
@@ -498,10 +511,10 @@
             <aside class="hero-tarjeta" aria-label="Resumen de contenidos">
                 <h2>¿Qué encontrarás aquí?</h2>
                 <ul class="hero-lista">
-                    <li>Interés simple y compuesto.</li>
-                    <li>Valor presente y valor futuro.</li>
-                    <li>Tasas nominales, efectivas y equivalentes.</li>
-                    <li>Anualidades, rentas y préstamos.</li>
+                    <li>Temas clave de matemática financiera.</li>
+                    <li>Indicadores de liquidez, rotación y rentabilidad.</li>
+                    <li>Análisis horizontal y vertical.</li>
+                    <li>Ejemplo de dashboard financiero.</li>
                 </ul>
             </aside>
         </div>
@@ -511,11 +524,12 @@
     <section id="temas">
         <div class="contenedor">
             <div class="seccion-titulo">
-                <h2>Temas principales de Matemática Financiera</h2>
-                <p>Base sólida para cursos, exámenes y autoestudio.</p>
+                <h2>Temas principales de Matemática y Análisis Financiero</h2>
+                <p>Base sólida para cursos, exámenes y análisis de decisiones financieras.</p>
             </div>
 
             <div class="grid-temas">
+                <!-- Matemática financiera pura -->
                 <article class="tarjeta">
                     <h3>Interés simple</h3>
                     <p>Introducción al cálculo de montos con interés simple.</p>
@@ -528,7 +542,7 @@
 
                 <article class="tarjeta">
                     <h3>Interés compuesto</h3>
-                    <p>Clásico en finanzas modernas: capitalización y reinversión de intereses.</p>
+                    <p>Capitalización y reinversión de intereses, base de las finanzas modernas.</p>
                     <ul>
                         <li>Monto compuesto y crecimiento exponencial.</li>
                         <li>Capitalización periódica (mensual, anual, etc.).</li>
@@ -547,15 +561,6 @@
                 </article>
 
                 <article class="tarjeta">
-                    <h3>Anualidades y rentas</h3>
-                    <p>Pagos periódicos, préstamos y ahorros programados.</p>
-                    <ul>
-                        <li>Anualidades vencidas y anticipadas.</li>
-                        <li>Cálculo de cuota, monto y saldo.</li>
-                    </ul>
-                </article>
-
-                <article class="tarjeta">
                     <h3>Descuento simple y compuesto</h3>
                     <p>Uso del descuento en títulos y documentos financieros.</p>
                     <ul>
@@ -570,7 +575,99 @@
                     <ul>
                         <li>Diagramas de flujo de caja.</li>
                         <li>Descuento a diferentes tasas.</li>
-                        <li>Comparación de alternativas.</li>
+                        <li>Comparación de alternativas financieras.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Anualidades y rentas</h3>
+                    <p>Pagos periódicos, préstamos y ahorros programados.</p>
+                    <ul>
+                        <li>Anualidades vencidas y anticipadas.</li>
+                        <li>Cálculo de cuota, monto y saldo.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Fecha focal</h3>
+                    <p>Punto de referencia financiero para comparar valores en el tiempo.</p>
+                    <ul>
+                        <li>Traslado de valores al pasado y al futuro.</li>
+                        <li>Uso en ecuaciones de valor.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Ecuaciones de valor</h3>
+                    <p>Igualación de valores en diferentes fechas de pago.</p>
+                    <ul>
+                        <li>Valor equivalente.</li>
+                        <li>Ecuaciones de monto.</li>
+                        <li>Aplicación en préstamos y restructuraciones.</li>
+                    </ul>
+                </article>
+
+                <!-- Indicadores financieros -->
+                <article class="tarjeta">
+                    <h3>Indicadores de liquidez</h3>
+                    <p>Miden la capacidad de la empresa para cumplir obligaciones de corto plazo.</p>
+                    <ul>
+                        <li><strong>Razón corriente:</strong> Activos corrientes / Pasivos corrientes.</li>
+                        <li><strong>Prueba ácida (razón rápida):</strong> (Activos corrientes - Inventarios) / Pasivos corrientes.</li>
+                        <li><strong>Capital de trabajo:</strong> Activos corrientes - Pasivos corrientes.</li>
+                        <li><strong>Liquidez absoluta:</strong> (Caja + Bancos + Inversiones líquidas) / Pasivos corrientes.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Indicadores de rotación</h3>
+                    <p>Miden la eficiencia con la que se utilizan inventarios, cartera y activos.</p>
+                    <ul>
+                        <li><strong>Rotación de inventarios:</strong> Costo de ventas / Inventario promedio.</li>
+                        <li><strong>Días de inventario:</strong> 360 / Rotación de inventarios.</li>
+                        <li><strong>Rotación de cartera:</strong> Ventas a crédito / Cuentas por cobrar promedio.</li>
+                        <li><strong>Días de cartera:</strong> 360 / Rotación de cartera.</li>
+                        <li><strong>Rotación de activos totales:</strong> Ventas netas / Activos totales.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Indicadores de rentabilidad</h3>
+                    <p>Miden la capacidad de generar utilidades a partir de los recursos disponibles.</p>
+                    <ul>
+                        <li><strong>ROE:</strong> Rentabilidad del patrimonio.</li>
+                        <li><strong>ROA:</strong> Rentabilidad de los activos.</li>
+                        <li>Margen neto y margen operativo.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Análisis horizontal</h3>
+                    <p>Estudia las variaciones de los estados financieros a través del tiempo.</p>
+                    <ul>
+                        <li>Variación absoluta.</li>
+                        <li>Variación porcentual.</li>
+                        <li>Detección de tendencias.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Análisis vertical</h3>
+                    <p>Evalúa la estructura interna de los estados financieros en un periodo.</p>
+                    <ul>
+                        <li>Porcentajes integrales.</li>
+                        <li>Estructura del estado de resultados.</li>
+                        <li>Estructura del balance general.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Dashboards financieros</h3>
+                    <p>Paneles visuales para monitorear indicadores clave de desempeño (KPIs).</p>
+                    <ul>
+                        <li>Dashboards en Excel y Google Sheets.</li>
+                        <li>Uso de Power BI u otras herramientas.</li>
+                        <li>Visualización de indicadores de liquidez, rotación y rentabilidad.</li>
                     </ul>
                 </article>
             </div>
@@ -595,7 +692,7 @@
                     </p>
                     <p>Fórmula general:</p>
                     <p><code>M = C (1 + i · n)</code></p>
-                    <p>Donde M es el monto, C el capital, i la tasa por periodo, y n el número de periodos.</p>
+                    <p>Donde M es el monto, C el capital, i la tasa por periodo y n el número de periodos.</p>
                 </article>
 
                 <article class="tarjeta">
@@ -619,24 +716,29 @@
                         <span class="resaltado">2% mensual</span>.
                     </p>
                     <p>Fórmula de anualidad vencida:</p>
-                    <p><code>R = \u0050 \u00b7 \u0069 / (1 - (1 + i)^{-n})</code></p>
+                    <p><code>R = P · i / (1 - (1 + i)^{-n})</code></p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- =================== RECURSOS =================== -->
-    <section id="recursos">
+    <!-- =================== DASHBOARD (IMAGEN) =================== -->
+    <section id="dashboard">
         <div class="contenedor">
             <div class="seccion-titulo">
-                <h2>Recursos y materiales</h2>
-                <p>Próximamente se añadirán resúmenes, PDFs y más ejercicios.</p>
+                <h2>Ejemplo de dashboard financiero</h2>
+                <p>
+                    Un panel visual donde se resumen indicadores clave de liquidez, rotación y rentabilidad.
+                </p>
             </div>
 
-            <div class="tarjeta">
-                <p>
-                    La idea es que esta página sea tu punto de referencia rápido para repasar
-                    conceptos clave de matemática financiera antes de un examen o al hacer trabajos.
+            <div class="tarjeta dashboard-imagen">
+                <!-- Reemplaza "dashboard-financiero.png" por el nombre real de tu imagen -->
+                <img src="dashboard-financiero.png" alt="Ejemplo de dashboard financiero con KPIs y gráficos" />
+                <p style="font-size:0.9rem; margin-top:10px; color:#555;">
+                    Este dashboard puede construirse en Excel, Google Sheets o Power BI, incluyendo tarjetas de KPIs,
+                    gráficos de barras para rotaciones, gráficos de líneas para tendencias y un resumen de indicadores
+                    principales (razón corriente, ROE, ROA, margen neto, etc.).
                 </p>
             </div>
         </div>
@@ -686,7 +788,7 @@
                         <button type="submit">Enviar correo</button>
                     </form>
                     <p style="font-size:0.8rem; color:#666; margin-top:6px;">
-                        Nota: <code>tucorreo jhs.com.co@gmail.com</code> en el HTML por tu email real.
+                        Nota: cambia <code>tucorreo@ejemplo.com</code> por tu email real en el HTML.
                     </p>
                 </div>
             </div>
@@ -731,5 +833,3 @@
     </script>
 </body>
 </html>
-
-
